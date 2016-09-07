@@ -1,4 +1,5 @@
 %define debug_package %nil
+%bcond_with python3
 
 Summary:        Extremely fast tool to remove duplicates
 Name:           rmlint
@@ -14,21 +15,24 @@ BuildRequires:  json-glib-devel
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(blkid)
 BuildRequires:  elfutils-devel
+%if %{with python3}
 BuildRequires:  python-devel
 Requires:	python-shredder
+%endif
 
 %description
 rmlint finds space waste and other broken things on your filesystem
 and offers to remove it.
 
+%if %{with python3}
 %package -n python-shredder
 Summary: Runtime module for %{name}
 Group:	Development/Python
 
-
 %description -n python-shredder
 rmlint finds space waste and other broken things on your filesystem
 and offers to remove it.
+%endif
 
 %prep
 %setup -q
@@ -49,6 +53,8 @@ and offers to remove it.
 %{_datadir}/glib-2.0/schemas/org.gnome.Shredder.gschema.xml
 %{_iconsdir}/hicolor/scalable/apps/shredder.svg
 
+%if %{with python3}
 %files -n python-shredder
 %{python_sitelib}/shredder
 %{python_sitelib}/Shredder*
+%endif
