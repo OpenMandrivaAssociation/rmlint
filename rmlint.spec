@@ -13,7 +13,7 @@ BuildRequires:  scons
 BuildRequires:  json-glib-devel
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(blkid)
-BuildRequires:  pkgconfig(libelf)
+BuildRequires:  elfutils-devel
 BuildRequires:  python-devel
 Requires:	python-shredder
 
