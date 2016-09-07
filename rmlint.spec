@@ -15,6 +15,7 @@ BuildRequires:  json-glib-devel
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(blkid)
 BuildRequires:  elfutils-devel
+BuildRequires:  python-sphinx
 %if %{with python3}
 BuildRequires:  python-devel
 Requires:	python-shredder
@@ -48,10 +49,12 @@ and offers to remove it.
 %files -f %{name}.lang
 %{_bindir}/%{name}
 %{_mandir}/man1/%{name}.*
+%if %{with python3}
 %{_datadir}/applications/shredder.desktop
 %{_datadir}/glib-2.0/schemas/*.compiled
 %{_datadir}/glib-2.0/schemas/org.gnome.Shredder.gschema.xml
 %{_iconsdir}/hicolor/scalable/apps/shredder.svg
+%endif
 
 %if %{with python3}
 %files -n python-shredder
