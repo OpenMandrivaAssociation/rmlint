@@ -12,6 +12,7 @@ Source0:	https://github.com/sahib/rmlint/archive/v%{version}.tar.gz
 BuildRequires:  scons
 BuildRequires:  json-glib-devel
 BuildRequires:  pkgconfig(glib-2.0)
+BuildRequires:  pkgconfig(blkid)
 BuildRequires:  python-devel
 Requires:	python-shredder
 
