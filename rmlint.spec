@@ -6,7 +6,7 @@ Version:        2.4.4
 Release:        1
 License:        GPLv3
 Group:          Monitoring
-Url:            http://rmlint.rtfd.org/
+Url:            https://rmlint.rtfd.org/
 Source0:	https://github.com/sahib/rmlint/archive/v%{version}.tar.gz
 
 BuildRequires:  scons
